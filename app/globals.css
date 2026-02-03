@@ -1,0 +1,144 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+
+@custom-variant dark (&:is(.dark *));
+
+/* Cyber-Medical Theme - CardioFit Lab */
+:root {
+  /* Deep Void Background */
+  --background: #00041c;
+  --foreground: #ffffff;
+  
+  /* Card with glassmorphism */
+  --card: rgba(0, 20, 50, 0.6);
+  --card-foreground: #ffffff;
+  
+  --popover: rgba(0, 20, 50, 0.9);
+  --popover-foreground: #ffffff;
+  
+  /* Electric Cyan Primary */
+  --primary: #00fffd;
+  --primary-foreground: #00041c;
+  
+  /* Soft Cyan Secondary */
+  --secondary: #68d2df;
+  --secondary-foreground: #00041c;
+  
+  --muted: rgba(104, 210, 223, 0.2);
+  --muted-foreground: #68d2df;
+  
+  --accent: #00fffd;
+  --accent-foreground: #00041c;
+  
+  --destructive: #ff4757;
+  --destructive-foreground: #ffffff;
+  
+  --border: rgba(0, 255, 253, 0.2);
+  --input: rgba(0, 255, 253, 0.1);
+  --ring: #00fffd;
+  
+  --chart-1: #00fffd;
+  --chart-2: #68d2df;
+  --chart-3: #00a8a6;
+  --chart-4: #004d4c;
+  --chart-5: #002626;
+  
+  --radius: 0.75rem;
+  
+  --sidebar: rgba(0, 20, 50, 0.8);
+  --sidebar-foreground: #ffffff;
+  --sidebar-primary: #00fffd;
+  --sidebar-primary-foreground: #00041c;
+  --sidebar-accent: rgba(0, 255, 253, 0.1);
+  --sidebar-accent-foreground: #00fffd;
+  --sidebar-border: rgba(0, 255, 253, 0.2);
+  --sidebar-ring: #00fffd;
+}
+
+@theme inline {
+  --font-sans: 'Montserrat', 'Montserrat Fallback', sans-serif;
+  --font-mono: 'Geist Mono', 'Geist Mono Fallback', monospace;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+  
+  /* Custom colors for direct use */
+  --color-cyan: #00fffd;
+  --color-cyan-soft: #68d2df;
+  --color-void: #00041c;
+  --color-void-light: #001030;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Custom neon glow effects */
+.neon-glow {
+  box-shadow: 0 0 20px rgba(0, 255, 253, 0.3), 0 0 40px rgba(0, 255, 253, 0.1);
+}
+
+.neon-glow-strong {
+  box-shadow: 0 0 30px rgba(0, 255, 253, 0.5), 0 0 60px rgba(0, 255, 253, 0.2), 0 0 100px rgba(0, 255, 253, 0.1);
+}
+
+.neon-border {
+  border: 1px solid rgba(0, 255, 253, 0.5);
+}
+
+.neon-text {
+  text-shadow: 0 0 10px rgba(0, 255, 253, 0.5), 0 0 20px rgba(0, 255, 253, 0.3);
+}
+
+/* Glassmorphism */
+.glass {
+  background: rgba(0, 20, 50, 0.6);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(0, 255, 253, 0.1);
+}
+
+.glass-strong {
+  background: rgba(0, 20, 50, 0.8);
+  backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(30px);
+  border: 1px solid rgba(0, 255, 253, 0.2);
+}
