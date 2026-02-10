@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   title: 'CardioFit Lab | Ingeniería de Precisión para el Rendimiento Humano',
   description: 'Fusionamos cardiología y biomecánica en Ibagué. Análisis biomecánico, Bike Fit de lujo, cardiología especializada y protocolos de recuperación.',
   keywords: ['cardiología', 'biomecánica', 'bike fit', 'fitness', 'Ibagué', 'rendimiento deportivo', 'entrenamiento personalizado'],
-  generator: 'v0.app',
+  generator: 'Larry Garcia',
   openGraph: {
     title: 'CardioFit Lab | Ingeniería de Precisión para el Rendimiento Humano',
     description: 'Donde la ciencia se encuentra con la fuerza. Fusionamos cardiología y biomecánica en Ibagué.',

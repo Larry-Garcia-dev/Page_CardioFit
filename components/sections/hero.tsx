@@ -22,14 +22,14 @@ export function HeroSection() {
           poster="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=1920&q=80"
         >
           <source
-            src="https://api.magnificapec.com/video/Manifiesto_ConCortinilla_CardioFit%20Lab.mp4"
+            src="https://api.magnificapec.com/cardiofit/videoCardioFig.mp4"
             type="video/mp4"
           />
         </video>
         {/* Dark overlay */}
-        <div className="absolute inset-0 bg-[#00041c]/70" />
+        {/* <div className="absolute inset-0 bg-[#00041c]/70" />
         {/* Gradient overlay */}
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#00041c]/50 to-[#00041c]" />
+        {/* <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#00041c]/50 to-[#00041c]" /> */} 
       </div>
 
       {/* Content */}
@@ -41,7 +41,7 @@ export function HeroSection() {
           className="max-w-4xl mx-auto"
         >
           {/* Logo/Brand */}
-          <motion.div
+          {/* <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6, delay: 0.2 }}
@@ -50,10 +50,10 @@ export function HeroSection() {
             <span className="text-[#00fffd] text-sm md:text-base font-semibold tracking-[0.3em] uppercase neon-text">
               CardioFit Lab
             </span>
-          </motion.div>
+          </motion.div> */}
 
           {/* Main Heading */}
-          <motion.h1
+          {/* <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
@@ -64,14 +64,14 @@ export function HeroSection() {
           </motion.h1>
 
           {/* Subheading */}
-          <motion.h2
+          {/* <motion.h2
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
             className="text-lg md:text-xl lg:text-2xl text-[#68d2df] mb-10 max-w-3xl mx-auto leading-relaxed text-pretty"
           >
             Donde la ciencia se encuentra con la fuerza. Fusionamos cardiología y biomecánica en Ibagué.
-          </motion.h2>
+          </motion.h2> */} 
 
           {/* CTA Button */}
           <motion.div
@@ -79,13 +79,13 @@ export function HeroSection() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.8 }}
           >
-            <Button
+            {/* <Button
               onClick={scrollToContact}
               size="lg"
               className="bg-[#00fffd] text-[#00041c] hover:bg-[#68d2df] font-semibold text-lg px-8 py-6 rounded-full neon-glow-strong transition-all duration-300 hover:scale-105"
             >
               Agendar Diagnóstico
-            </Button>
+            </Button> */}
           </motion.div>
         </motion.div>
       </div>
