@@ -23,9 +23,9 @@ export function HeroSection() {
   }
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Video Background */}
-      <div className="absolute inset-0 z-0">
+    <section className="relative w-full overflow-hidden">
+      {/* Video Background - aspect ratio driven */}
+      <div className="relative w-full">
         {/* Horizontal video for desktop */}
         <video
           ref={desktopVideoRef}
@@ -33,7 +33,7 @@ export function HeroSection() {
           loop
           muted
           playsInline
-          className="hidden md:block w-full h-full object-cover"
+          className="hidden md:block w-full h-auto"
         >
           <source
             src="https://api.magnificapec.com/cardiofit/videoCardioFig.mp4"
@@ -47,17 +47,13 @@ export function HeroSection() {
           loop
           muted
           playsInline
-          className="block md:hidden w-full h-full object-cover"
+          className="block md:hidden w-full h-auto"
         >
           <source
             src="https://api.magnificapec.com/cardiofit/vertical.mp4"
             type="video/mp4"
           />
         </video>
-        {/* Dark overlay */}
-        {/* <div className="absolute inset-0 bg-[#00041c]/70" />
-        {/* Gradient overlay */}
-        {/* <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#00041c]/50 to-[#00041c]" /> */} 
       </div>
 
       {/* Content */}
@@ -123,7 +119,7 @@ export function HeroSection() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1, delay: 1.2 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10"
+        className="absolute bottom-4 left-1/2 -translate-x-1/2 z-10"
       >
         <motion.div
           animate={{ y: [0, 10, 0] }}
