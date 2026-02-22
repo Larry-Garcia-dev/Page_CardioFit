@@ -1,10 +1,23 @@
 "use client"
 
+import { useRef, useEffect } from "react"
 import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import { ChevronDown } from "lucide-react"
 
 export function HeroSection() {
+  const desktopVideoRef = useRef<HTMLVideoElement>(null)
+  const mobileVideoRef = useRef<HTMLVideoElement>(null)
+
+  useEffect(() => {
+    if (desktopVideoRef.current) {
+      desktopVideoRef.current.playbackRate = 0.75
+    }
+    if (mobileVideoRef.current) {
+      mobileVideoRef.current.playbackRate = 0.75
+    }
+  }, [])
+
   const scrollToContact = () => {
     document.getElementById("contacto")?.scrollIntoView({ behavior: "smooth" })
   }
@@ -15,6 +28,7 @@ export function HeroSection() {
       <div className="absolute inset-0 z-0">
         {/* Horizontal video for desktop */}
         <video
+          ref={desktopVideoRef}
           autoPlay
           loop
           muted
@@ -28,6 +42,7 @@ export function HeroSection() {
         </video>
         {/* Vertical video for mobile */}
         <video
+          ref={mobileVideoRef}
           autoPlay
           loop
           muted
