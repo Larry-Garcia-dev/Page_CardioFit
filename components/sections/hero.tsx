@@ -13,16 +13,29 @@ export function HeroSection() {
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Video Background */}
       <div className="absolute inset-0 z-0">
+        {/* Horizontal video for desktop */}
         <video
           autoPlay
           loop
           muted
           playsInline
-          className="w-full h-full object-cover"
-          poster="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=1920&q=80"
+          className="hidden md:block w-full h-full object-cover"
         >
           <source
             src="https://api.magnificapec.com/cardiofit/videoCardioFig.mp4"
+            type="video/mp4"
+          />
+        </video>
+        {/* Vertical video for mobile */}
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="block md:hidden w-full h-full object-cover"
+        >
+          <source
+            src="https://api.magnificapec.com/cardiofit/vertical.mp4"
             type="video/mp4"
           />
         </video>
