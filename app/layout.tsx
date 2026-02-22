@@ -1,15 +1,8 @@
 import React from "react"
 import type { Metadata, Viewport } from 'next'
-import { Montserrat, Geist_Mono } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
-import Script from 'next/script' // Importación necesaria para el Schema
+import Script from 'next/script'
 import './globals.css'
-
-const _montserrat = Montserrat({
-  subsets: ["latin"],
-  variable: '--font-montserrat'
-});
-const _geistMono = Geist_Mono({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: 'CardioFit Lab | Ingeniería de Precisión para el Rendimiento Humano',
@@ -59,7 +52,6 @@ const jsonLd = {
   "url": "https://cardiofit-lab.vercel.app",
   "telephone": "+573155774777",
   "description": "Ingeniería de Precisión para el Rendimiento Humano. Fusionamos cardiología, biomecánica y protocolos de recuperación en Ibagué.",
-  // DIRECCIÓN DEL NEGOCIO PRINCIPAL
   "address": {
     "@type": "PostalAddress",
     "streetAddress": "Av. Ambalá Carrera 14 #44-63 Local 2",
@@ -93,7 +85,6 @@ const jsonLd = {
       "name": "Dra. Lorena González",
       "jobTitle": "Directora Médica",
       "description": "Especialista en Cardiología Deportiva y evaluación cardiovascular para atletas.",
-      // SOLUCIÓN AL ERROR: Se agrega la dirección explícita también aquí
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "Av. Ambalá Carrera 14 #44-63 Local 2",
@@ -147,8 +138,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es">
-      <body className="font-sans antialiased">
-        {/* Componente Script para inyectar el JSON-LD en la página */}
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
+      </head>
+      <body className="font-sans antialiased" style={{ '--font-montserrat': '"Montserrat", sans-serif', '--font-geist-mono': '"Geist Mono", monospace' } as React.CSSProperties}>
         <Script
           id="schema-org-local-business"
           type="application/ld+json"
