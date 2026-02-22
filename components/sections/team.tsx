@@ -11,7 +11,7 @@ const doctor = {
   icon: Stethoscope,
   description:
     "Especialista en cardiología con enfoque en medicina deportiva. Experta en evaluación cardiovascular para atletas y personas activas.",
-  image: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=400&h=400&fit=crop&crop=face",
+  image: "/images/doc.jpeg",
 }
 
 const team = [doctor]; // Declare the team variable
