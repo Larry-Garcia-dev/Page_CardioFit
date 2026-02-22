@@ -1,35 +1,59 @@
 "use client"
 
+import { useRef, useEffect } from "react"
 import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import { ChevronDown } from "lucide-react"
 
 export function HeroSection() {
+  const desktopVideoRef = useRef<HTMLVideoElement>(null)
+  const mobileVideoRef = useRef<HTMLVideoElement>(null)
+
+  useEffect(() => {
+    if (desktopVideoRef.current) {
+      desktopVideoRef.current.playbackRate = 0.75
+    }
+    if (mobileVideoRef.current) {
+      mobileVideoRef.current.playbackRate = 0.75
+    }
+  }, [])
+
   const scrollToContact = () => {
     document.getElementById("contacto")?.scrollIntoView({ behavior: "smooth" })
   }
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Video Background */}
-      <div className="absolute inset-0 z-0">
+    <section className="relative w-full overflow-hidden">
+      {/* Video Background - aspect ratio driven */}
+      <div className="relative w-full">
+        {/* Horizontal video for desktop */}
         <video
+          ref={desktopVideoRef}
           autoPlay
           loop
           muted
           playsInline
-          className="w-full h-full object-cover"
-          poster="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=1920&q=80"
+          className="hidden md:block w-full h-auto"
         >
           <source
             src="https://api.magnificapec.com/cardiofit/videoCardioFig.mp4"
             type="video/mp4"
           />
         </video>
-        {/* Dark overlay */}
-        {/* <div className="absolute inset-0 bg-[#00041c]/70" />
-        {/* Gradient overlay */}
-        {/* <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#00041c]/50 to-[#00041c]" /> */} 
+        {/* Vertical video for mobile */}
+        <video
+          ref={mobileVideoRef}
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="block md:hidden w-full h-auto"
+        >
+          <source
+            src="https://api.magnificapec.com/cardiofit/vertical.mp4"
+            type="video/mp4"
+          />
+        </video>
       </div>
 
       {/* Content */}
@@ -95,7 +119,7 @@ export function HeroSection() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1, delay: 1.2 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10"
+        className="absolute bottom-4 left-1/2 -translate-x-1/2 z-10"
       >
         <motion.div
           animate={{ y: [0, 10, 0] }}

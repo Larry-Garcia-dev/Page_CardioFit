@@ -11,7 +11,7 @@ const doctor = {
   icon: Stethoscope,
   description:
     "Especialista en cardiología con enfoque en medicina deportiva. Experta en evaluación cardiovascular para atletas y personas activas.",
-  image: "/images/doc.jpeg",
+  image: "/images/doc.jpg.jpeg",
 }
 
 const team = [doctor]; // Declare the team variable
@@ -70,32 +70,34 @@ export function TeamSection() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="max-w-lg mx-auto"
+          className="max-w-4xl mx-auto"
         >
           <motion.div
-            whileHover={{ scale: 1.02 }}
-            className="glass rounded-2xl overflow-hidden neon-border hover:border-[#00fffd]/50 transition-all duration-300 group"
+            whileHover={{ scale: 1.01 }}
+            className="glass rounded-2xl overflow-hidden neon-border hover:border-[#00fffd]/50 transition-all duration-300 group flex flex-col md:flex-row"
           >
-            <div className="relative h-72 md:h-80 overflow-hidden">
+            {/* Photo - left side */}
+            <div className="relative w-full md:w-[380px] shrink-0 overflow-hidden">
               <Image
                 src={doctor.image || "/placeholder.svg"}
                 alt={doctor.name}
-                fill
-                className="object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                width={380}
+                height={570}
+                className="w-full h-80 md:h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#00041c] via-[#00041c]/50 to-transparent" />
-              
-              {/* Icon badge */}
-              <div className="absolute top-4 right-4 p-3 rounded-full glass border border-[#00fffd]/30">
-                <doctor.icon className="w-5 h-5 text-[#00fffd]" />
-              </div>
             </div>
 
-            <div className="p-6">
-              <h3 className="text-lg md:text-xl font-semibold md:font-bold text-foreground mb-1">{doctor.name}</h3>
-              <p className="text-[#00fffd] font-medium mb-1">{doctor.role}</p>
-              <p className="text-[#68d2df] text-sm mb-4">{doctor.specialty}</p>
-              <p className="text-foreground/70 text-sm leading-relaxed font-normal">{doctor.description}</p>
+            {/* Info - right side */}
+            <div className="flex flex-col justify-center p-8 md:p-10">
+              {/* Icon badge */}
+              <div className="mb-6 p-3 w-fit rounded-full glass border border-[#00fffd]/30">
+                <doctor.icon className="w-6 h-6 text-[#00fffd]" />
+              </div>
+
+              <h3 className="text-xl md:text-2xl font-semibold md:font-bold text-foreground mb-2">{doctor.name}</h3>
+              <p className="text-[#00fffd] font-medium text-base md:text-lg mb-1">{doctor.role}</p>
+              <p className="text-[#68d2df] text-sm md:text-base mb-6">{doctor.specialty}</p>
+              <p className="text-foreground/70 text-sm md:text-base leading-relaxed font-normal">{doctor.description}</p>
             </div>
           </motion.div>
         </motion.div>
